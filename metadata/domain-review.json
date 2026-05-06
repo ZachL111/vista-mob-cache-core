@@ -1,0 +1,73 @@
+{
+  "repo": "vista-mob-cache-core",
+  "language": "Go",
+  "category": "Mobile workflows",
+  "goal": "Create a Go reference implementation for cache workflows, centered on incremental indexing, append-only fixtures, and checkpoint recovery checks.",
+  "review_model": {
+    "terms": [
+      "form pressure",
+      "sync drift",
+      "local state",
+      "conflict cost"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "form pressure",
+      "signal": 65,
+      "slack": 52,
+      "drag": 29,
+      "confidence": 46,
+      "score": 141,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "sync drift",
+      "signal": 51,
+      "slack": 30,
+      "drag": 11,
+      "confidence": 45,
+      "score": 144,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "local state",
+      "signal": 47,
+      "slack": 42,
+      "drag": 8,
+      "confidence": 70,
+      "score": 182,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "conflict cost",
+      "signal": 74,
+      "slack": 36,
+      "drag": 19,
+      "confidence": 88,
+      "score": 215,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "form pressure",
+      "signal": 91,
+      "slack": 34,
+      "drag": 32,
+      "confidence": 68,
+      "score": 188,
+      "lane": "ship"
+    }
+  ]
+}
